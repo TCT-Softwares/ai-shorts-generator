@@ -23,7 +23,13 @@ export default function Home() {
     setResult(data.content);
     setLoading(false);
   };
-
+  
+  const upgrade = async () => {
+    const res = await fetch("/api/checkout", { method: "POST" });
+    const data = await res.json();
+    window.location.href = data.url;
+  };
+  
   const copy = () => {
     navigator.clipboard.writeText(result);
   };
@@ -70,7 +76,7 @@ export default function Home() {
             >
               Copy
             </button>
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-400" onclick={upgrade}>
               Free 5 generations/day. Upgrade soon.
             </p>
           </div>
