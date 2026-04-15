@@ -70,6 +70,9 @@ export default function Home() {
             >
               Copy
             </button>
+            <p className="text-sm text-gray-400">
+              Free 5 generations/day. Upgrade soon.
+            </p>
           </div>
         )}
       </div>
